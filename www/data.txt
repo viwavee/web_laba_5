@@ -2,3 +2,5 @@
 вика;234;fantasy;yes;1 неделя
 полина;13457;romance;yes;1 месяц
 хаха;54;detective;no;1 неделя
+Виктория;111111;fantasy;yes;1 месяц
+ввв;33;detective;yes;1 неделя
