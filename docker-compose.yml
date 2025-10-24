@@ -3,7 +3,7 @@ version: '3.8'
 services:
   nginx:
     image: nginx:latest
-    container_name: lab2_nginx
+    container_name: lab4_nginx
     ports:
       - "8080:80"
     volumes:
@@ -14,7 +14,7 @@ services:
 
   php:
     image: php:8.2-fpm
-    container_name: lab2_php
+    container_name: lab4_php
     volumes:
       - ./www:/var/www/html
     expose:
