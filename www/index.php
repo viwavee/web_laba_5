@@ -37,14 +37,16 @@ $_SESSION['user_info'] = UserInfo::getInfo();
             background: #fff;
             border-radius: 10px;
             box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-            padding: 15px;
-            margin: 10px 0;
+            padding: 10px;
+            margin: 8px 0;
             overflow: hidden;
+            font-size: 14px;
         }
         .book img {
             float: left;
-            margin-right: 10px;
+            margin-right: 8px;
             border-radius: 6px;
+            width: 60px;
         }
         button {
             background: #1e40af;
