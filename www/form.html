@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Заявка в библиотеку</title>
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+  <h1>Заявка в библиотеку</h1>
+
+  <form id="libraryForm" action="process.php" method="POST">
+    <label>Имя:</label><br>
+    <input type="text" name="username" placeholder="Введите имя" required><br><br>
+
+    <label>Номер билета:</label><br>
+    <input type="number" name="ticket" placeholder="Введите номер билета" required><br><br>
+
+    <label>Жанр книги:</label><br>
+    <select name="genre" required>
+      <option value="">Выберите жанр</option>
+      <option value="fantasy">Фэнтези</option>
+      <option value="detective">Детектив</option>
+      <option value="romance">Роман</option>
+      <option value="science">Научная</option>
+    </select><br><br>
+
+    <input type="checkbox" name="ebook" value="yes"> Электронная версия<br><br>
+
+    <label>Срок аренды:</label><br>
+    <input type="radio" name="period" value="1 неделя" required> 1 неделя<br>
+    <input type="radio" name="period" value="1 месяц" required> 1 месяц<br><br>
+
+    <button type="submit">Отправить заявку</button>
+  </form>
+
+  <div id="result"></div>  
+</body>
+</html>

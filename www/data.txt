@@ -1,0 +1,4 @@
+ааа;1;detective;no;1 неделя
+вика;234;fantasy;yes;1 неделя
+полина;13457;romance;yes;1 месяц
+хаха;54;detective;no;1 неделя
