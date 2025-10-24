@@ -36,7 +36,9 @@ UserInfo.php — Новый класс, инкапсулирующий логи�
 
 
 📸 Скриншоты работы
-1. Интеграция API
-   <img width="1063" height="930" alt="image" src="https://github.com/user-attachments/assets/b609164c-d085-4981-8b75-98d1bc4cb85d" />
+1. Интеграция API + штрафное задание
+   <img width="1015" height="913" alt="image" src="https://github.com/user-attachments/assets/e04d276e-ffd5-4e7b-8326-459d76fae480" />
+
 2. Информация о пользователе и Cookie
-   <img width="844" height="297" alt="image" src="https://github.com/user-attachments/assets/21e1935a-1257-4116-a8b4-c31830fd87c7" />
+   <img width="957" height="137" alt="image" src="https://github.com/user-attachments/assets/23e86d56-d13b-42d9-893b-aab87c1b113d" />
+
