@@ -4,35 +4,160 @@
   <meta charset="UTF-8">
   <title>Заявка в библиотеку</title>
   <script src="js/script.js" defer></script>
+  <style>
+    /* === Общие стили === */
+    body {
+      font-family: "Segoe UI", Roboto, Arial, sans-serif;
+      background: linear-gradient(135deg, #e3eeff, #ffffff);
+      min-height: 100vh;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .form-container {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+      padding: 40px 50px;
+      width: 100%;
+      max-width: 420px;
+      transition: transform 0.3s ease;
+    }
+
+    .form-container:hover {
+      transform: translateY(-3px);
+    }
+
+    h1 {
+      text-align: center;
+      color: #1e3a8a;
+      margin-bottom: 30px;
+    }
+
+    label {
+      font-weight: 600;
+      color: #374151;
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    select {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      font-size: 15px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    input[type="text"]:focus,
+    input[type="number"]:focus,
+    select:focus {
+      border-color: #1e40af;
+      box-shadow: 0 0 4px rgba(30, 64, 175, 0.3);
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .checkbox,
+    .radio-group {
+      margin: 15px 0;
+    }
+
+    .radio-group label {
+      display: inline-block;
+      margin-right: 15px;
+      color: #374151;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px 15px;
+      background-color: #1e40af;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.1s;
+    }
+
+    button:hover {
+      background-color: #1d4ed8;
+    }
+
+    button:active {
+      transform: scale(0.98);
+    }
+
+    #result {
+      margin-top: 20px;
+      text-align: center;
+      color: #16a34a;
+      font-weight: 600;
+    }
+
+    .footer {
+      margin-top: 25px;
+      text-align: center;
+      font-size: 0.9em;
+      color: #6b7280;
+    }
+  </style>
 </head>
 <body>
-  <h1>Заявка в библиотеку</h1>
+  <div class="form-container">
+    <h1>📚 Заявка в библиотеку</h1>
 
-  <form id="libraryForm" action="process.php" method="POST">
-    <label>Имя:</label><br>
-    <input type="text" name="username" placeholder="Введите имя" required><br><br>
+    <form id="libraryForm" action="process.php" method="POST">
+      <div class="form-group">
+        <label>Имя:</label>
+        <input type="text" name="username" placeholder="Введите имя" required>
+      </div>
 
-    <label>Номер билета:</label><br>
-    <input type="number" name="ticket" placeholder="Введите номер билета" required><br><br>
+      <div class="form-group">
+        <label>Номер билета:</label>
+        <input type="number" name="ticket" placeholder="Введите номер билета" required>
+      </div>
 
-    <label>Жанр книги:</label><br>
-    <select name="genre" required>
-      <option value="">Выберите жанр</option>
-      <option value="fantasy">Фэнтези</option>
-      <option value="detective">Детектив</option>
-      <option value="romance">Роман</option>
-      <option value="science">Научная</option>
-    </select><br><br>
+      <div class="form-group">
+        <label>Жанр книги:</label>
+        <select name="genre" required>
+          <option value="">Выберите жанр</option>
+          <option value="fantasy">Фэнтези</option>
+          <option value="detective">Детектив</option>
+          <option value="romance">Роман</option>
+          <option value="science">Научная</option>
+        </select>
+      </div>
 
-    <input type="checkbox" name="ebook" value="yes"> Электронная версия<br><br>
+      <div class="checkbox">
+        <label>
+          <input type="checkbox" name="ebook" value="yes"> Электронная версия
+        </label>
+      </div>
 
-    <label>Срок аренды:</label><br>
-    <input type="radio" name="period" value="1 неделя" required> 1 неделя<br>
-    <input type="radio" name="period" value="1 месяц" required> 1 месяц<br><br>
+      <div class="form-group">
+        <label>Срок аренды:</label>
+        <div class="radio-group">
+          <label><input type="radio" name="period" value="1 неделя" required> 1 неделя</label>
+          <label><input type="radio" name="period" value="1 месяц" required> 1 месяц</label>
+        </div>
+      </div>
 
-    <button type="submit">Отправить заявку</button>
-  </form>
+      <button type="submit">📨 Отправить заявку</button>
+    </form>
 
-  <div id="result"></div>  
+    <div id="result"></div>
+    <div class="footer">© <?= date('Y') ?> Электронная библиотека</div>
+  </div>
 </body>
 </html>
