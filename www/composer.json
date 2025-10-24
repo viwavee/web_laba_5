@@ -1,0 +1,17 @@
+{
+    "name": "vika/lab4",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Vika\\Lab4\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "vika"
+        }
+    ],
+    "require": {
+        "guzzlehttp/guzzle": "^7.10"
+    }
+}
