@@ -3,7 +3,7 @@
         'name' => 'vika/lab4',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '2cab6437cb4f91cf92c362a3144624f7ff96662a',
+        'reference' => '3d51c104205a7b51b8907320fb5b05bc66386248',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -103,7 +103,7 @@
         'vika/lab4' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '2cab6437cb4f91cf92c362a3144624f7ff96662a',
+            'reference' => '3d51c104205a7b51b8907320fb5b05bc66386248',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
