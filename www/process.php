@@ -1,13 +1,13 @@
 <?php
 session_start();
-require_once 'ApiClient.php';
-require_once 'UserInfo.php';
+require_once 'db.php';
+require_once 'LibraryRequest.php';
 
 $username = trim($_POST['username'] ?? '');
 $ticket = $_POST['ticket'] ?? '';
 $genre = $_POST['genre'] ?? '';
 $period = $_POST['period'] ?? '';
-$ebook = isset($_POST['ebook']) ? 'yes' : 'no';
+$ebook = isset($_POST['ebook']) ? 1 : 0;
 
 $errors = [];
 if (empty($username)) $errors[] = "Имя не может быть пустым";
@@ -21,33 +21,16 @@ if (!empty($errors)) {
     exit();
 }
 
-$username = htmlspecialchars($username);
-$ticket = htmlspecialchars($ticket);
-$genre = htmlspecialchars($genre);
-$period = htmlspecialchars($period);
+$request = new LibraryRequest($pdo);
+$request->add($username, $ticket, $genre, $ebook, $period);
 
-$_SESSION['username'] = $username;
-$_SESSION['ticket'] = $ticket;
-$_SESSION['genre'] = $genre;
-$_SESSION['ebook'] = $ebook;
-$_SESSION['period'] = $period;
+$_SESSION['username'] = htmlspecialchars($username);
+$_SESSION['ticket'] = htmlspecialchars($ticket);
+$_SESSION['genre'] = htmlspecialchars($genre);
+$_SESSION['ebook'] = $ebook ? 'yes' : 'no';
+$_SESSION['period'] = htmlspecialchars($period);
 
-// Запись в файл
-$line = $username . ";" . $ticket . ";" . $genre . ";" . $ebook . ";" . $period . "\n";
-file_put_contents("data.txt", $line, FILE_APPEND | LOCK_EX);
-
-// 🔹 Подключение API
-$api = new ApiClient();
-$url = 'https://openlibrary.org/search.json?q=tolstoy';
-$apiData = $api->request($url);
-$_SESSION['api_data'] = $apiData;
-
-// 🔹 Информация о пользователе
-$_SESSION['user_info'] = UserInfo::getInfo();
-
-// 🔹 Установка cookie
 setcookie("last_submission", date('Y-m-d H:i:s'), time() + 3600, "/");
 
 header("Location: index.php");
 exit();
-?>
