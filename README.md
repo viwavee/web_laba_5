@@ -27,30 +27,51 @@ Adminer (управление БД): http://localhost:8081
 
 
 📦 Структура проекта
+
 web_laba_5/
+
 │
-├── docker-compose.yml        # Основной файл сборки и настройки контейнеров
+
+├── docker-compose.yml # Основной файл сборки и настройки контейнеров
+
 ├── nginx/
+
 │   └── default.conf          # Конфигурация Nginx (маршрутизация и php-fpm)
+
 │
+
 ├── php/
+
 │   └── Dockerfile            # Dockerfile для контейнера с PHP
+
 │
+
 ├── src/                      # Исходники приложения
+
 │   ├── index.php             # Главная страница
+
 │   ├── form.html             # Форма добавления заявки
+
 │   ├── process.php           # Обработка формы, сохранение данных
+
 │   ├── view.php              # Таблица всех заявок (с подключением к MySQL)
+
 │   ├── db.php                # Подключение к базе данных (PDO)
+
 │   ├── LibraryRequest.php    # Класс для работы с заявками
+
 │   └── assets/               # (по желанию) стили и изображения
+
 │
+
 └── README.md
+
 
 
 🧠 Как запустить проект
 
 1.Открыть папку проекта в терминале
+
 2.Выполнить:
 
 docker-compose up -d
@@ -64,11 +85,17 @@ adminer: http://localhost:8081
 
 4.В Adminer войти с данными:
 
+
 System: MySQL
+
 Server: db
+
 User: lab5_user
+
 Password: lab5_pass
+
 Database: lab5_db
+
 
 
 📸 Скриншоты работы
